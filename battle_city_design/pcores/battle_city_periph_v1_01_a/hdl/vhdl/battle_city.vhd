@@ -6,12 +6,12 @@ entity battle_city is
    generic(
       DATA_WIDTH           : natural := 32;
       COLOR_WIDTH          : natural := 24;
-      ADDR_WIDTH           : natural := 13;
-      REGISTER_OFFSET      : natural := 5439;   -- 6960           -- Pointer to registers in memory map
+      ADDR_WIDTH           : natural := 14;
+      REGISTER_OFFSET      : natural := 8959;   -- 5438  6960           -- Pointer to registers in memory map
       C_BASEADDR           : natural := 0;               -- Pointer to local memory in memory map
       REGISTER_NUMBER      : natural := 10;              -- Number of registers used for sprites
       NUM_BITS_FOR_REG_NUM : natural := 4;               -- Number of bits required for number of registers
-      MAP_OFFSET           : natural := 639;            -- Pointer to start of map in memory
+      MAP_OFFSET           : natural := 4159;     -- 639     Pointer to start of map in memory
       OVERHEAD             : natural := 5;               -- Number of overhead bits
       SPRITE_Z             : natural := 1                -- Z coordinate of sprite
 	);
@@ -22,6 +22,7 @@ entity battle_city is
       bus_addr_i     : in  std_logic_vector(ADDR_WIDTH-1 downto 0);  -- Address used to point to registers
       bus_data_i     : in  std_logic_vector(DATA_WIDTH-1 downto 0);  -- Data to be writed to registers
       bus_we_i       : in  std_logic;
+		--ram_clk_o		: out std_logic;											-- Same clock domain
 		--ram_clk_o		: out std_logic;											-- Same clock domain
 		-- VGA --
 		pixel_row_i    : in  unsigned(8 downto 0);
@@ -102,8 +103,8 @@ architecture Behavioral of battle_city is
    signal reg_pointer_s    : pointer_t;
    signal reg_end_row_s    : coor_row_t;
    signal reg_end_col_s    : coor_col_t;
-   signal rel_addr_s       : unsigned(12 downto 0);
-   signal map_index_s      : unsigned(12 downto 0);
+   signal rel_addr_s       : unsigned(13 downto 0);
+   signal map_index_s      : unsigned(13 downto 0);
 	
    -- First stage --
    signal img_rot_s        : unsigned(7 downto 0);
@@ -144,13 +145,13 @@ architecture Behavioral of battle_city is
     ------------ mi radimo ------------------------------------------
 	
 	signal stat_img_size        : unsigned(3 downto 0);
-	signal map_index_size_8_s0	 : unsigned(12 downto 0);
-	signal map_index_size_16_s0 : unsigned(12 downto 0);
+	signal map_index_size_8_s0	 : unsigned(ADDR_WIDTH-1 downto 0);
+	signal map_index_size_16_s0 : unsigned(ADDR_WIDTH-1 downto 0);
 	signal stat_img_size_is_16  : std_logic;
 	
 	--- STAGE 0 ---
    signal reg_intersected_s0        : unsigned(NUM_BITS_FOR_REG_NUM-1 downto 0);    -- Index of intersected sprite
-	signal map_index_s0     	      :  unsigned(12 downto 0);
+	signal map_index_s0     	      :  unsigned(ADDR_WIDTH-1 downto 0);
 	signal map_addr_s0       	      :  unsigned(ADDR_WIDTH-1 downto 0);
 	signal map_addr_r1               :  unsigned(ADDR_WIDTH-1 downto 0);
 	signal reg_intersected_r1        :  unsigned(NUM_BITS_FOR_REG_NUM-1 downto 0);
@@ -372,12 +373,12 @@ architecture Behavioral of battle_city is
 	
 	
    -- map_index_s = (row/8)*80 + col/8;
-	map_index_size_8_s0  <= unsigned('0' & std_logic_vector(pixel_row_i(8 downto 3)) & "000000") 
-                   + unsigned('0' & std_logic_vector(pixel_row_i(8 downto 3)) & "0000")
+	map_index_size_8_s0  <= unsigned("00" & std_logic_vector(pixel_row_i(8 downto 3)) & "000000") 
+                   + unsigned("00" & std_logic_vector(pixel_row_i(8 downto 3)) & "0000")
                    + pixel_col_i(9 downto 3);
 						 
-	map_index_size_16_s0  <= unsigned ("00" & std_logic_vector(pixel_row_i(8 downto 4)) & "000000") 
-                   + unsigned("00" & std_logic_vector(pixel_row_i(8 downto 4)) & "0000")
+	map_index_size_16_s0  <= unsigned ("000" & std_logic_vector(pixel_row_i(8 downto 4)) & "000000") 
+                   + unsigned("000" & std_logic_vector(pixel_row_i(8 downto 4)) & "0000")
                    + pixel_col_i(9 downto 4);
 						 
 	map_index_s0 <= map_index_size_16_s0 when stat_img_size_is_16 = '1' else map_index_size_8_s0;
@@ -577,7 +578,7 @@ architecture Behavioral of battle_city is
 			unsigned(mem_data_s(23 downto 16)) when "01",
 			unsigned(mem_data_s(31 downto 24)) when others;
 
-	sprt_addr_s9 <= reg_pointer_s(to_integer(reg_intersected_r9))(12 downto 0) + sprt_tex_offset_r9(7 downto 2);
+	sprt_addr_s9 <= reg_pointer_s(to_integer(reg_intersected_r9))(ADDR_WIDTH-1 downto 0) + sprt_tex_offset_r9(7 downto 2);
 	
 	process(clk_i) begin
 		if rising_edge(clk_i) then

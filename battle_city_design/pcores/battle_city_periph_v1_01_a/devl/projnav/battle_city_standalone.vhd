@@ -133,7 +133,7 @@ end entity battle_city_standalone;
 architecture IMP of battle_city_standalone is
 	
 	-- Same as in battle_city_standalone BELOW THIS LINE ------------------
-	constant ADDR_WIDTH : natural := 13;
+	constant ADDR_WIDTH : natural := 14;
 
 	signal clk_100MHz			: std_logic;
 	signal n_reset				: std_logic;

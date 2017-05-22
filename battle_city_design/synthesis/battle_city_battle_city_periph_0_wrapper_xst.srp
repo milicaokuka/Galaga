@@ -1,10 +1,10 @@
 Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:\materija\una\battle_city_fpga-master\battle_city_design\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to C:\materija\ra223\LPRS\battle_city_design\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "battle_city_battle_city_periph_0_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\materija\una\battle_city_fpga-master\battle_city_design\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\materija\ra223\LPRS\battle_city_design\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx45fgg676-2
@@ -62,24 +62,24 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <vga_ctrl>.
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <battle_city>.
 Parsing architecture <Behavioral> of entity <battle_city>.
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <battle_city_periph>.
 Parsing architecture <IMP> of entity <battle_city_periph>.
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <ram>.
 Parsing architecture <arch> of entity <ram>.
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_a.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_a.vhd" into library battle_city_periph_v1_01_a
 Parsing architecture <arch_v1> of entity <vga_ctrl>.
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_e.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_e.vhd" into library battle_city_periph_v1_01_a
 Parsing entity <clk_gen_100MHz>.
-Parsing VHDL file "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_a.vhd" into library battle_city_periph_v1_01_a
+Parsing VHDL file "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/clk_gen_100MHz_a.vhd" into library battle_city_periph_v1_01_a
 Parsing architecture <arch_v1> of entity <clk_gen_100mhz>.
-Parsing VHDL file "C:\materija\una\battle_city_fpga-master\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd" into library work
+Parsing VHDL file "C:\materija\ra223\LPRS\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd" into library work
 Parsing entity <battle_city_battle_city_periph_0_wrapper>.
 Parsing architecture <STRUCTURE> of entity <battle_city_battle_city_periph_0_wrapper>.
 
@@ -94,8 +94,8 @@ Elaborating entity <battle_city_periph> (architecture <IMP>) with generics from 
 Elaborating entity <vga_ctrl> (architecture <arch_v1>) from library <battle_city_periph_v1_01_a>.
 
 Elaborating entity <battle_city> (architecture <Behavioral>) with generics from library <battle_city_periph_v1_01_a>.
-WARNING:HDLCompiler:1127 - "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 505: Assignment to img_addr_r7 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 633: Assignment to reg_intsect_r13 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 506: Assignment to img_addr_r7 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd" Line 634: Assignment to reg_intsect_r13 ignored, since the identifier is never used
 
 Elaborating entity <ram> (architecture <arch>) with generics from library <battle_city_periph_v1_01_a>.
 
@@ -104,13 +104,13 @@ Elaborating entity <ram> (architecture <arch>) with generics from library <battl
 =========================================================================
 
 Synthesizing Unit <battle_city_battle_city_periph_0_wrapper>.
-    Related source file is "C:\materija\una\battle_city_fpga-master\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd".
+    Related source file is "C:\materija\ra223\LPRS\battle_city_design\hdl\battle_city_battle_city_periph_0_wrapper.vhd".
     Summary:
 	no macro.
 Unit <battle_city_battle_city_periph_0_wrapper> synthesized.
 
 Synthesizing Unit <battle_city_periph>.
-    Related source file is "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd".
+    Related source file is "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city_periph.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_S_AXI_DATA_WIDTH = 32
@@ -144,7 +144,7 @@ WARNING:Xst:647 - Input <S_AXI_RREADY> is never used. This port will be preserve
 Unit <battle_city_periph> synthesized.
 
 Synthesizing Unit <vga_ctrl>.
-    Related source file is "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd".
+    Related source file is "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/vga_ctrl_e.vhd".
     Found 10-bit register for signal <pixel_x>.
     Found 9-bit register for signal <pixel_y>.
     Found 1-bit register for signal <vga_clk>.
@@ -174,15 +174,15 @@ Synthesizing Unit <vga_ctrl>.
 Unit <vga_ctrl> synthesized.
 
 Synthesizing Unit <battle_city>.
-    Related source file is "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd".
+    Related source file is "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/battle_city.vhd".
         DATA_WIDTH = 32
         COLOR_WIDTH = 24
-        ADDR_WIDTH = 13
-        REGISTER_OFFSET = 5439
+        ADDR_WIDTH = 14
+        REGISTER_OFFSET = 8959
         C_BASEADDR = 0
         REGISTER_NUMBER = 10
         NUM_BITS_FOR_REG_NUM = 4
-        MAP_OFFSET = 639
+        MAP_OFFSET = 4159
         OVERHEAD = 5
         SPRITE_Z = 1
 WARNING:Xst:647 - Input <rst_n_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -197,10 +197,10 @@ WARNING:Xst:647 - Input <rst_n_i> is never used. This port will be preserved and
     Found 64-bit register for signal <registers_s<9>>.
     Found 10-bit register for signal <reg_intsect_r1>.
     Found 4-bit register for signal <reg_intersected_r1>.
-    Found 13-bit register for signal <map_addr_r1>.
+    Found 14-bit register for signal <map_addr_r1>.
     Found 4-bit register for signal <reg_intersected_r2>.
     Found 4-bit register for signal <reg_intersected_r3>.
-    Found 13-bit register for signal <img_addr_r4>.
+    Found 14-bit register for signal <img_addr_r4>.
     Found 8-bit register for signal <img_rot_r4>.
     Found 8-bit register for signal <img_z_coor_r4>.
     Found 4-bit register for signal <img_row_r4>.
@@ -209,14 +209,14 @@ WARNING:Xst:647 - Input <rst_n_i> is never used. This port will be preserved and
     Found 4-bit register for signal <img_tex_col_r5>.
     Found 4-bit register for signal <img_tex_row_r5>.
     Found 4-bit register for signal <reg_intersected_r5>.
-    Found 13-bit register for signal <img_addr_r5>.
+    Found 14-bit register for signal <img_addr_r5>.
     Found 8-bit register for signal <img_z_coor_r5>.
     Found 6-bit register for signal <img_tex_word_r6>.
     Found 2-bit register for signal <img_tex_pix_sel_r6>.
     Found 4-bit register for signal <reg_intersected_r6>.
-    Found 13-bit register for signal <img_addr_r6>.
+    Found 14-bit register for signal <img_addr_r6>.
     Found 8-bit register for signal <img_z_coor_r6>.
-    Found 13-bit register for signal <img_pix_addr_r7>.
+    Found 14-bit register for signal <img_pix_addr_r7>.
     Found 8-bit register for signal <img_z_coor_r7>.
     Found 2-bit register for signal <img_tex_pix_sel_r7>.
     Found 4-bit register for signal <max_r7>.
@@ -235,7 +235,7 @@ WARNING:Xst:647 - Input <rst_n_i> is never used. This port will be preserved and
     Found 8-bit register for signal <img_z_coor_r9>.
     Found 8-bit register for signal <sprt_tex_offset_r10>.
     Found 8-bit register for signal <img_z_coor_r10>.
-    Found 13-bit register for signal <sprt_addr_r10>.
+    Found 14-bit register for signal <sprt_addr_r10>.
     Found 8-bit register for signal <img_color_idx_r10>.
     Found 4-bit register for signal <reg_intersected_r10>.
     Found 8-bit register for signal <sprt_tex_offset_r11>.
@@ -251,113 +251,113 @@ WARNING:Xst:647 - Input <rst_n_i> is never used. This port will be preserved and
     Found 4-bit register for signal <reg_intersected_r13>.
     Found 8-bit register for signal <spr_color_idx_r13>.
     Found 8-bit register for signal <palette_idx_r14>.
-    Found 13-bit register for signal <mem_addr_r>.
+    Found 14-bit register for signal <mem_addr_r>.
     Found 64-bit register for signal <registers_s<0>>.
     Found 8-bit register for signal <palette_addr_r15_dummy[7:0]>.
     Found 8-bit register for signal <palette_addr_r16>.
-    Found 9-bit adder for signal <reg_end_row_s<0>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<0>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<1>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<1>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<2>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<2>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<3>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<3>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<4>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<4>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<5>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<5>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<6>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<6>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<7>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<7>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<8>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<8>> created at line 343.
-    Found 9-bit adder for signal <reg_end_row_s<9>> created at line 342.
-    Found 10-bit adder for signal <reg_end_col_s<9>> created at line 343.
-    Found 13-bit adder for signal <n1383> created at line 379.
-    Found 13-bit adder for signal <map_index_s0> created at line 379.
-    Found 13-bit adder for signal <map_addr_s0> created at line 1241.
-    Found 13-bit adder for signal <img_pix_addr_s6> created at line 497.
-    Found 13-bit adder for signal <sprt_addr_s9> created at line 580.
-    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_182_OUT<3:0>> created at line 450.
-    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_183_OUT<3:0>> created at line 451.
-    Found 4-bit subtractor for signal <sprt_int_row_s6<3:0>> created at line 211.
-    Found 4-bit subtractor for signal <sprt_int_col_s6<3:0>> created at line 210.
-    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_230_OUT<3:0>> created at line 530.
-    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_232_OUT<3:0>> created at line 529.
-    Found 13-bit subtractor for signal <reg_word_addr> created at line 76.
-    Found 4-bit 10-to-1 multiplexer for signal <max_s6> created at line 499.
-    Found 8-bit 10-to-1 multiplexer for signal <rot_s6> created at line 500.
-    Found 9-bit 10-to-1 multiplexer for signal <reg_intersected_r6[3]_X_8_o_wide_mux_210_OUT> created at line 502.
-    Found 10-bit 10-to-1 multiplexer for signal <reg_intersected_r6[3]_X_8_o_wide_mux_212_OUT> created at line 503.
-    Found 8-bit 4-to-1 multiplexer for signal <img_color_idx_s9> created at line 573.
-    Found 16-bit 10-to-1 multiplexer for signal <n1239> created at line 580.
-    Found 8-bit 4-to-1 multiplexer for signal <spr_color_idx_s12> created at line 626.
-    Found 1-bit 10-to-1 multiplexer for signal <reg_intersected_r13[3]_X_8_o_Mux_279_o> created at line 650.
-    Found 13-bit 4-to-1 multiplexer for signal <mem_addr_s> created at line 696.
-    Found 4-bit 4-to-1 multiplexer for signal <_n1453> created at line 225.
-    Found 4-bit 4-to-1 multiplexer for signal <_n1456> created at line 226.
-    Found 4-bit 4-to-1 multiplexer for signal <_n1442> created at line 186.
-    Found 4-bit 4-to-1 multiplexer for signal <_n1450> created at line 187.
-    Found 13-bit comparator lessequal for signal <n0003> created at line 311
-    Found 13-bit comparator greater for signal <GND_8_o_reg_word_addr[12]_LessThan_5_o> created at line 311
-    Found 9-bit comparator lessequal for signal <n0689> created at line 346
-    Found 9-bit comparator lessequal for signal <n0691> created at line 347
-    Found 10-bit comparator lessequal for signal <n0693> created at line 348
-    Found 10-bit comparator lessequal for signal <n0695> created at line 349
-    Found 9-bit comparator lessequal for signal <n0709> created at line 346
-    Found 9-bit comparator lessequal for signal <n0711> created at line 347
-    Found 10-bit comparator lessequal for signal <n0713> created at line 348
-    Found 10-bit comparator lessequal for signal <n0715> created at line 349
-    Found 9-bit comparator lessequal for signal <n0729> created at line 346
-    Found 9-bit comparator lessequal for signal <n0731> created at line 347
-    Found 10-bit comparator lessequal for signal <n0733> created at line 348
-    Found 10-bit comparator lessequal for signal <n0735> created at line 349
-    Found 9-bit comparator lessequal for signal <n0749> created at line 346
-    Found 9-bit comparator lessequal for signal <n0751> created at line 347
-    Found 10-bit comparator lessequal for signal <n0753> created at line 348
-    Found 10-bit comparator lessequal for signal <n0755> created at line 349
-    Found 9-bit comparator lessequal for signal <n0769> created at line 346
-    Found 9-bit comparator lessequal for signal <n0771> created at line 347
-    Found 10-bit comparator lessequal for signal <n0773> created at line 348
-    Found 10-bit comparator lessequal for signal <n0775> created at line 349
-    Found 9-bit comparator lessequal for signal <n0789> created at line 346
-    Found 9-bit comparator lessequal for signal <n0791> created at line 347
-    Found 10-bit comparator lessequal for signal <n0793> created at line 348
-    Found 10-bit comparator lessequal for signal <n0795> created at line 349
-    Found 9-bit comparator lessequal for signal <n0809> created at line 346
-    Found 9-bit comparator lessequal for signal <n0811> created at line 347
-    Found 10-bit comparator lessequal for signal <n0813> created at line 348
-    Found 10-bit comparator lessequal for signal <n0815> created at line 349
-    Found 9-bit comparator lessequal for signal <n0829> created at line 346
-    Found 9-bit comparator lessequal for signal <n0831> created at line 347
-    Found 10-bit comparator lessequal for signal <n0833> created at line 348
-    Found 10-bit comparator lessequal for signal <n0835> created at line 349
-    Found 9-bit comparator lessequal for signal <n0849> created at line 346
-    Found 9-bit comparator lessequal for signal <n0851> created at line 347
-    Found 10-bit comparator lessequal for signal <n0853> created at line 348
-    Found 10-bit comparator lessequal for signal <n0855> created at line 349
-    Found 9-bit comparator lessequal for signal <n0869> created at line 346
-    Found 9-bit comparator lessequal for signal <n0871> created at line 347
-    Found 10-bit comparator lessequal for signal <n0873> created at line 348
-    Found 10-bit comparator lessequal for signal <n0875> created at line 349
-    Found 8-bit comparator greater for signal <n1006> created at line 653
-    Found 8-bit comparator greater for signal <GND_8_o_spr_color_idx_r13[7]_LessThan_282_o> created at line 653
-    WARNING:Xst:2404 -  FFs/Latches <palette_addr_r15<12:8>> (without init value) have a constant value of 0 in block <battle_city>.
-    WARNING:Xst:2404 -  FFs/Latches <palette_addr_r16<12:8>> (without init value) have a constant value of 0 in block <battle_city>.
+    Found 9-bit adder for signal <reg_end_row_s<0>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<0>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<1>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<1>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<2>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<2>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<3>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<3>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<4>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<4>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<5>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<5>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<6>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<6>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<7>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<7>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<8>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<8>> created at line 344.
+    Found 9-bit adder for signal <reg_end_row_s<9>> created at line 343.
+    Found 10-bit adder for signal <reg_end_col_s<9>> created at line 344.
+    Found 14-bit adder for signal <n1383> created at line 380.
+    Found 14-bit adder for signal <map_index_s0> created at line 380.
+    Found 14-bit adder for signal <map_addr_s0> created at line 1241.
+    Found 14-bit adder for signal <img_pix_addr_s6> created at line 498.
+    Found 14-bit adder for signal <sprt_addr_s9> created at line 581.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_182_OUT<3:0>> created at line 451.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_183_OUT<3:0>> created at line 452.
+    Found 4-bit subtractor for signal <sprt_int_row_s6<3:0>> created at line 212.
+    Found 4-bit subtractor for signal <sprt_int_col_s6<3:0>> created at line 211.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_230_OUT<3:0>> created at line 531.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_232_OUT<3:0>> created at line 530.
+    Found 14-bit subtractor for signal <reg_word_addr> created at line 77.
+    Found 4-bit 10-to-1 multiplexer for signal <max_s6> created at line 500.
+    Found 8-bit 10-to-1 multiplexer for signal <rot_s6> created at line 501.
+    Found 9-bit 10-to-1 multiplexer for signal <reg_intersected_r6[3]_X_8_o_wide_mux_210_OUT> created at line 503.
+    Found 10-bit 10-to-1 multiplexer for signal <reg_intersected_r6[3]_X_8_o_wide_mux_212_OUT> created at line 504.
+    Found 8-bit 4-to-1 multiplexer for signal <img_color_idx_s9> created at line 574.
+    Found 16-bit 10-to-1 multiplexer for signal <n1239> created at line 581.
+    Found 8-bit 4-to-1 multiplexer for signal <spr_color_idx_s12> created at line 627.
+    Found 1-bit 10-to-1 multiplexer for signal <reg_intersected_r13[3]_X_8_o_Mux_279_o> created at line 651.
+    Found 14-bit 4-to-1 multiplexer for signal <mem_addr_s> created at line 697.
+    Found 4-bit 4-to-1 multiplexer for signal <_n1453> created at line 226.
+    Found 4-bit 4-to-1 multiplexer for signal <_n1456> created at line 227.
+    Found 4-bit 4-to-1 multiplexer for signal <_n1442> created at line 187.
+    Found 4-bit 4-to-1 multiplexer for signal <_n1450> created at line 188.
+    Found 14-bit comparator lessequal for signal <n0003> created at line 312
+    Found 14-bit comparator greater for signal <GND_8_o_reg_word_addr[13]_LessThan_5_o> created at line 312
+    Found 9-bit comparator lessequal for signal <n0689> created at line 347
+    Found 9-bit comparator lessequal for signal <n0691> created at line 348
+    Found 10-bit comparator lessequal for signal <n0693> created at line 349
+    Found 10-bit comparator lessequal for signal <n0695> created at line 350
+    Found 9-bit comparator lessequal for signal <n0709> created at line 347
+    Found 9-bit comparator lessequal for signal <n0711> created at line 348
+    Found 10-bit comparator lessequal for signal <n0713> created at line 349
+    Found 10-bit comparator lessequal for signal <n0715> created at line 350
+    Found 9-bit comparator lessequal for signal <n0729> created at line 347
+    Found 9-bit comparator lessequal for signal <n0731> created at line 348
+    Found 10-bit comparator lessequal for signal <n0733> created at line 349
+    Found 10-bit comparator lessequal for signal <n0735> created at line 350
+    Found 9-bit comparator lessequal for signal <n0749> created at line 347
+    Found 9-bit comparator lessequal for signal <n0751> created at line 348
+    Found 10-bit comparator lessequal for signal <n0753> created at line 349
+    Found 10-bit comparator lessequal for signal <n0755> created at line 350
+    Found 9-bit comparator lessequal for signal <n0769> created at line 347
+    Found 9-bit comparator lessequal for signal <n0771> created at line 348
+    Found 10-bit comparator lessequal for signal <n0773> created at line 349
+    Found 10-bit comparator lessequal for signal <n0775> created at line 350
+    Found 9-bit comparator lessequal for signal <n0789> created at line 347
+    Found 9-bit comparator lessequal for signal <n0791> created at line 348
+    Found 10-bit comparator lessequal for signal <n0793> created at line 349
+    Found 10-bit comparator lessequal for signal <n0795> created at line 350
+    Found 9-bit comparator lessequal for signal <n0809> created at line 347
+    Found 9-bit comparator lessequal for signal <n0811> created at line 348
+    Found 10-bit comparator lessequal for signal <n0813> created at line 349
+    Found 10-bit comparator lessequal for signal <n0815> created at line 350
+    Found 9-bit comparator lessequal for signal <n0829> created at line 347
+    Found 9-bit comparator lessequal for signal <n0831> created at line 348
+    Found 10-bit comparator lessequal for signal <n0833> created at line 349
+    Found 10-bit comparator lessequal for signal <n0835> created at line 350
+    Found 9-bit comparator lessequal for signal <n0849> created at line 347
+    Found 9-bit comparator lessequal for signal <n0851> created at line 348
+    Found 10-bit comparator lessequal for signal <n0853> created at line 349
+    Found 10-bit comparator lessequal for signal <n0855> created at line 350
+    Found 9-bit comparator lessequal for signal <n0869> created at line 347
+    Found 9-bit comparator lessequal for signal <n0871> created at line 348
+    Found 10-bit comparator lessequal for signal <n0873> created at line 349
+    Found 10-bit comparator lessequal for signal <n0875> created at line 350
+    Found 8-bit comparator greater for signal <n1006> created at line 654
+    Found 8-bit comparator greater for signal <GND_8_o_spr_color_idx_r13[7]_LessThan_282_o> created at line 654
+    WARNING:Xst:2404 -  FFs/Latches <palette_addr_r15<13:8>> (without init value) have a constant value of 0 in block <battle_city>.
+    WARNING:Xst:2404 -  FFs/Latches <palette_addr_r16<13:8>> (without init value) have a constant value of 0 in block <battle_city>.
     Summary:
 	inferred  32 Adder/Subtractor(s).
-	inferred 1029 D-type flip-flop(s).
+	inferred 1036 D-type flip-flop(s).
 	inferred  44 Comparator(s).
 	inferred 672 Multiplexer(s).
 Unit <battle_city> synthesized.
 
 Synthesizing Unit <ram>.
-    Related source file is "C:/materija/una/battle_city_fpga-master/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd".
+    Related source file is "C:/materija/ra223/LPRS/battle_city_design/pcores/battle_city_periph_v1_01_a/hdl/vhdl/ram.vhd".
         DATA_WIDTH = 32
-        ADDR_WIDTH = 13
-    Found 8192x32-bit dual-port RAM <Mram_mem> for signal <mem>.
+        ADDR_WIDTH = 14
+    Found 16384x32-bit dual-port RAM <Mram_mem> for signal <mem>.
     Found 32-bit register for signal <o_data>.
     Summary:
 	inferred   1 RAM(s).
@@ -369,11 +369,11 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 8192x32-bit dual-port RAM                             : 1
+ 16384x32-bit dual-port RAM                            : 1
 # Adders/Subtractors                                   : 36
  10-bit adder                                          : 11
- 13-bit adder                                          : 5
- 13-bit subtractor                                     : 1
+ 14-bit adder                                          : 5
+ 14-bit subtractor                                     : 1
  2-bit adder                                           : 1
  30-bit subtractor                                     : 1
  4-bit subtractor                                      : 6
@@ -381,7 +381,7 @@ Macro Statistics
 # Registers                                            : 83
  1-bit register                                        : 6
  10-bit register                                       : 3
- 13-bit register                                       : 7
+ 14-bit register                                       : 7
  2-bit register                                        : 6
  32-bit register                                       : 1
  4-bit register                                        : 20
@@ -392,8 +392,8 @@ Macro Statistics
 # Comparators                                          : 50
  10-bit comparator greater                             : 1
  10-bit comparator lessequal                           : 22
- 13-bit comparator greater                             : 1
- 13-bit comparator lessequal                           : 1
+ 14-bit comparator greater                             : 1
+ 14-bit comparator lessequal                           : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 1
  9-bit comparator lessequal                            : 22
@@ -401,7 +401,7 @@ Macro Statistics
  1-bit 10-to-1 multiplexer                             : 1
  1-bit 2-to-1 multiplexer                              : 640
  10-bit 10-to-1 multiplexer                            : 1
- 13-bit 4-to-1 multiplexer                             : 1
+ 14-bit 4-to-1 multiplexer                             : 1
  16-bit 10-to-1 multiplexer                            : 1
  4-bit 10-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 8
@@ -425,17 +425,17 @@ INFO:Xst:3226 - The RAM <battle_city_i/ram_i/Mram_mem> will be implemented as a 
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 8192-word x 32-bit                  |          |
+    |     aspect ratio   | 16384-word x 32-bit                 |          |
     |     mode           | read-first                          |          |
     |     clkA           | connected to signal <S_AXI_ACLK>    | rise     |
     |     weA            | connected to signal <write_regs_en> | high     |
-    |     addrA          | connected to signal <local_write_addr<14:2>> |          |
+    |     addrA          | connected to signal <local_write_addr<15:2>> |          |
     |     diA            | connected to signal <S_AXI_WDATA>   |          |
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 8192-word x 32-bit                  |          |
+    |     aspect ratio   | 16384-word x 32-bit                 |          |
     |     mode           | write-first                         |          |
     |     clkB           | connected to signal <S_AXI_ACLK>    | rise     |
     |     addrB          | connected to signal <battle_city_i/mem_addr_s> |          |
@@ -628,11 +628,11 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 8192x32-bit dual-port block RAM                       : 1
+ 16384x32-bit dual-port block RAM                      : 1
 # Adders/Subtractors                                   : 33
  10-bit adder                                          : 10
- 13-bit adder                                          : 5
- 13-bit subtractor                                     : 1
+ 14-bit adder                                          : 5
+ 14-bit subtractor                                     : 1
  30-bit subtractor                                     : 1
  4-bit subtractor                                      : 6
  9-bit adder                                           : 10
@@ -640,13 +640,13 @@ Macro Statistics
  10-bit up counter                                     : 1
  2-bit up counter                                      : 1
  9-bit up counter                                      : 1
-# Registers                                            : 893
- Flip-Flops                                            : 893
+# Registers                                            : 899
+ Flip-Flops                                            : 899
 # Comparators                                          : 50
  10-bit comparator greater                             : 1
  10-bit comparator lessequal                           : 22
- 13-bit comparator greater                             : 1
- 13-bit comparator lessequal                           : 1
+ 14-bit comparator greater                             : 1
+ 14-bit comparator lessequal                           : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 1
  9-bit comparator lessequal                            : 22
@@ -654,7 +654,7 @@ Macro Statistics
  1-bit 10-to-1 multiplexer                             : 1
  1-bit 2-to-1 multiplexer                              : 968
  10-bit 10-to-1 multiplexer                            : 1
- 13-bit 4-to-1 multiplexer                             : 1
+ 14-bit 4-to-1 multiplexer                             : 1
  16-bit 10-to-1 multiplexer                            : 1
  4-bit 10-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 8
@@ -668,34 +668,24 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_8_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_8_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_8_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_0_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_0_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_0_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_9_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_9_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_9_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_5_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_5_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_5_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_7_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_7_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_7_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_6_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_6_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_6_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_4_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_4_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_4_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_3_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_3_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_3_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_2_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_2_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_2_15> of sequential type is unconnected in block <battle_city_periph>.
-WARNING:Xst:2677 - Node <battle_city_i/registers_s_1_13> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_1_14> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <battle_city_i/registers_s_1_15> of sequential type is unconnected in block <battle_city_periph>.
 WARNING:Xst:2677 - Node <pixel_x_d1_0> of sequential type is unconnected in block <vga_ctrl>.
@@ -709,11 +699,11 @@ Optimizing unit <battle_city_battle_city_periph_0_wrapper> ...
 Optimizing unit <battle_city_periph> ...
 
 Optimizing unit <vga_ctrl> ...
-WARNING:Xst:1710 - FF/Latch <battle_city_periph_0/battle_city_i/map_addr_r1_12> (without init value) has a constant value of 0 in block <battle_city_battle_city_periph_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <battle_city_periph_0/battle_city_i/map_addr_r1_13> (without init value) has a constant value of 0 in block <battle_city_battle_city_periph_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block battle_city_battle_city_periph_0_wrapper, actual ratio is 6.
+Found area constraint ratio of 100 (+ 0) on block battle_city_battle_city_periph_0_wrapper, actual ratio is 7.
 FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_0 has been replicated 1 time(s)
 FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_1 has been replicated 1 time(s)
 FlipFlop battle_city_periph_0/vga_ctrl_i/pixel_x_2 has been replicated 1 time(s)
@@ -762,6 +752,7 @@ Processing Unit <battle_city_battle_city_periph_0_wrapper> :
 	Found 4-bit shift register for signal <battle_city_periph_0/battle_city_i/img_tex_pix_sel_r9_0>.
 	Found 4-bit shift register for signal <battle_city_periph_0/battle_city_i/sprt_tex_offset_r12_1>.
 	Found 4-bit shift register for signal <battle_city_periph_0/battle_city_i/sprt_tex_offset_r12_0>.
+	Found 3-bit shift register for signal <battle_city_periph_0/battle_city_i/img_addr_r6_13>.
 	Found 3-bit shift register for signal <battle_city_periph_0/battle_city_i/img_addr_r6_12>.
 	Found 3-bit shift register for signal <battle_city_periph_0/battle_city_i/img_addr_r6_11>.
 	Found 3-bit shift register for signal <battle_city_periph_0/battle_city_i/img_addr_r6_10>.
@@ -781,12 +772,12 @@ Unit <battle_city_battle_city_periph_0_wrapper> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 659
- Flip-Flops                                            : 659
-# Shift Registers                                      : 53
+# Registers                                            : 672
+ Flip-Flops                                            : 672
+# Shift Registers                                      : 54
  10-bit shift register                                 : 8
  2-bit shift register                                  : 8
- 3-bit shift register                                  : 25
+ 3-bit shift register                                  : 26
  4-bit shift register                                  : 8
  5-bit shift register                                  : 4
 
@@ -811,28 +802,28 @@ Top Level Output File Name         : battle_city_battle_city_periph_0_wrapper.ng
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2050
+# BELS                             : 2091
 #      GND                         : 1
 #      INV                         : 12
-#      LUT1                        : 142
-#      LUT2                        : 125
+#      LUT1                        : 144
+#      LUT2                        : 127
 #      LUT3                        : 21
-#      LUT4                        : 821
-#      LUT5                        : 60
-#      LUT6                        : 146
-#      MUXCY                       : 424
+#      LUT4                        : 846
+#      LUT5                        : 59
+#      LUT6                        : 151
+#      MUXCY                       : 428
 #      MUXF7                       : 37
 #      VCC                         : 1
-#      XORCY                       : 260
-# FlipFlops/Latches                : 712
-#      FD                          : 142
-#      FDE                         : 545
+#      XORCY                       : 264
+# FlipFlops/Latches                : 726
+#      FD                          : 159
+#      FDE                         : 556
 #      FDR                         : 2
-#      FDRE                        : 23
-# RAMS                             : 16
-#      RAMB16BWER                  : 16
-# Shift Registers                  : 53
-#      SRLC16E                     : 53
+#      FDRE                        : 9
+# RAMS                             : 32
+#      RAMB16BWER                  : 32
+# Shift Registers                  : 54
+#      SRLC16E                     : 54
 
 Device utilization summary:
 ---------------------------
@@ -841,26 +832,26 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             712  out of  54576     1%  
- Number of Slice LUTs:                 1380  out of  27288     5%  
-    Number used as Logic:              1327  out of  27288     4%  
-    Number used as Memory:               53  out of   6408     0%  
-       Number used as SRL:               53
+ Number of Slice Registers:             726  out of  54576     1%  
+ Number of Slice LUTs:                 1414  out of  27288     5%  
+    Number used as Logic:              1360  out of  27288     4%  
+    Number used as Memory:               54  out of   6408     0%  
+       Number used as SRL:               54
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1459
-   Number with an unused Flip Flop:     747  out of   1459    51%  
-   Number with an unused LUT:            79  out of   1459     5%  
-   Number of fully used LUT-FF pairs:   633  out of   1459    43%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:   1481
+   Number with an unused Flip Flop:     755  out of   1481    50%  
+   Number with an unused LUT:            67  out of   1481     4%  
+   Number of fully used LUT-FF pairs:   659  out of   1481    44%  
+   Number of unique control sets:         7
 
 IO Utilization: 
  Number of IOs:                         181
  Number of bonded IOBs:                   0  out of    358     0%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               16  out of    116    13%  
-    Number using Block RAM only:         16
+ Number of Block RAM/FIFO:               32  out of    116    27%  
+    Number using Block RAM only:         32
 
 ---------------------------
 Partition Resource Summary:
@@ -883,7 +874,7 @@ Clock Information:
 -----------------------------------+-----------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                     | Load  |
 -----------------------------------+-----------------------------------------------------------+-------+
-S_AXI_ACLK                         | NONE(battle_city_periph_0/battle_city_i/sprt_int_col_r7_3)| 781   |
+S_AXI_ACLK                         | NONE(battle_city_periph_0/battle_city_i/sprt_int_col_r7_3)| 812   |
 -----------------------------------+-----------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -896,8 +887,8 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 7.226ns (Maximum Frequency: 138.394MHz)
-   Minimum input arrival time before clock: 7.046ns
-   Maximum output required time after clock: 1.545ns
+   Minimum input arrival time before clock: 6.368ns
+   Maximum output required time after clock: 1.583ns
    Maximum combinational path delay: 0.464ns
 
 Timing Details:
@@ -907,7 +898,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
   Clock period: 7.226ns (frequency: 138.394MHz)
-  Total number of paths / destination ports: 25530 / 1568
+  Total number of paths / destination ports: 27277 / 1869
 -------------------------------------------------------------------------
 Delay:               7.226ns (Levels of Logic = 15)
   Source:            battle_city_periph_0/battle_city_i/registers_s_1_24 (FF)
@@ -942,30 +933,35 @@ Delay:               7.226ns (Levels of Logic = 15)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 56835 / 1230
+  Total number of paths / destination ports: 65373 / 1554
 -------------------------------------------------------------------------
-Offset:              7.046ns (Levels of Logic = 3)
-  Source:            S_AXI_AWADDR<31> (PAD)
+Offset:              6.368ns (Levels of Logic = 8)
+  Source:            S_AXI_AWADDR<2> (PAD)
   Destination:       battle_city_periph_0/battle_city_i/registers_s_1_56 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_AWADDR<31> to battle_city_periph_0/battle_city_i/registers_s_1_56
+  Data Path: S_AXI_AWADDR<2> to battle_city_periph_0/battle_city_i/registers_s_1_56
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT6:I0->O            1   0.254   1.137  battle_city_periph_0/write_regs_en2 (battle_city_periph_0/write_regs_en2)
-     LUT6:I0->O           65   0.254   1.937  battle_city_periph_0/write_regs_en4 (battle_city_periph_0/write_regs_en)
-     LUT3:I2->O          450   0.254   2.452  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o3 (battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o)
+     LUT1:I0->O            1   0.254   0.000  battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<0>_rt (battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<0>_rt)
+     MUXCY:S->O            1   0.215   0.000  battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<0> (battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<1> (battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<2> (battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<3> (battle_city_periph_0/battle_city_i/Msub_reg_word_addr_cy<3>)
+     XORCY:CI->O          11   0.206   1.267  battle_city_periph_0/battle_city_i/Msub_reg_word_addr_xor<4> (battle_city_periph_0/battle_city_i/reg_word_addr<4>)
+     LUT6:I3->O            1   0.235   1.112  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o1 (battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o1)
+     LUT6:I1->O          460   0.254   2.453  battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o3 (battle_city_periph_0/battle_city_i/bus_we_i_GND_8_o_AND_15_o)
      FDE:CE                    0.302          battle_city_periph_0/battle_city_i/registers_s_8_0
     ----------------------------------------
-    Total                      7.046ns (1.520ns logic, 5.526ns route)
-                                       (21.6% logic, 78.4% route)
+    Total                      6.368ns (1.537ns logic, 4.832ns route)
+                                       (24.1% logic, 75.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
   Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
-Offset:              1.545ns (Levels of Logic = 1)
+Offset:              1.583ns (Levels of Logic = 1)
   Source:            battle_city_periph_0/r_write_response (FF)
   Destination:       S_AXI_WREADY (PAD)
   Source Clock:      S_AXI_ACLK rising
@@ -974,11 +970,11 @@ Offset:              1.545ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.525   0.766  battle_city_periph_0/r_write_response (battle_city_periph_0/r_write_response)
+     FD:C->Q               4   0.525   0.804  battle_city_periph_0/r_write_response (battle_city_periph_0/r_write_response)
      LUT3:I2->O            0   0.254   0.000  battle_city_periph_0/accept_write1 (S_AXI_AWREADY)
     ----------------------------------------
-    Total                      1.545ns (0.779ns logic, 0.766ns route)
-                                       (50.4% logic, 49.6% route)
+    Total                      1.583ns (0.779ns logic, 0.804ns route)
+                                       (49.2% logic, 50.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1013,14 +1009,14 @@ S_AXI_ACLK     |    7.226|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.92 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.66 secs
  
 --> 
 
-Total memory usage is 284416 kilobytes
+Total memory usage is 296720 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  224 (   0 filtered)
+Number of warnings :  214 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

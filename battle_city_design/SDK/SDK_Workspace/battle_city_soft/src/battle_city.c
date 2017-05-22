@@ -12,17 +12,19 @@
 
 // ***** 16x16 IMAGES *****
 
-#define IMG_16x16_cigle			0x00FF
-#define IMG_16x16_coin			0x013F
-#define IMG_16x16_crno			0x017F
-#define IMG_16x16_enemi1		0x01BF
-#define IMG_16x16_mario			0x01FF
-#define IMG_16x16_plavacigla	0x023F
+#define IMG_16x16_cigle			0x063F
+#define IMG_16x16_coin			0x063F
+#define IMG_16x16_crno			0x063F
+#define IMG_16x16_enemi1		0x0EFF
+#define IMG_16x16_mario			0x04FF
+#define IMG_16x16_plavacigla	0x063F
+#define IMG_16x16_muva_skupljena	0x0EFF
+#define IMG_16x16_muva_rasirena		0x0EBF
 
 
 // ***** MAP *****
 
-#define MAP_BASE_ADDRESS			0x027F
+#define MAP_BASE_ADDRESS			0x103F
 
 
 #define MAP_X							0
@@ -64,6 +66,9 @@ int  prvi1 = 1;
 int	 prvi2 = 1;
 int  prvi3 = 1;
 
+int brojac1 = 0;
+int i ;
+
 
 typedef enum {
     b_false,
@@ -73,8 +78,8 @@ typedef enum {
 typedef enum {
     DIR_LEFT,
     DIR_RIGHT,
-    DIR_UP,
-    DIR_DOWN
+
+
 } direction_t;
 
 typedef struct {
@@ -91,8 +96,8 @@ typedef struct {
 } characters;
 
 characters mario = {
-    227,	                        // x
-    304, 		                     // y
+    320,	                        // x
+    450, 		                     // y
     DIR_RIGHT,              		// dir
     IMG_16x16_mario,  			// type
 
@@ -102,9 +107,9 @@ characters mario = {
     TANK1_REG_H             		// reg_h
 };
 
-characters enemie = {
-    331,						// x
-    368,						// y
+characters enemie1 = {
+	300,						// x
+    50,						// y
     DIR_LEFT,              		// dir
     IMG_16x16_enemi1,  		// type
 
@@ -114,11 +119,11 @@ characters enemie = {
     TANK_AI_REG_H             		// reg_h
 };
 
-characters coin1 = {
-    454,						// x
-    304,						// y
+characters enemie2 = {
+	320,						// x
+    50,						// y
     DIR_LEFT,              		// dir
-    IMG_16x16_coin,  		// type
+    IMG_16x16_enemi1,  		// type
 
     b_false,                		// destroyed
 
@@ -126,11 +131,11 @@ characters coin1 = {
     TANK_AI_REG_H2             		// reg_h
 };
 
-characters coin2  = {
-    469,						// x
-    304,						// y
+characters enemie3  = {
+	340,						// x
+    50,						// y
     DIR_LEFT,              		// dir
-    IMG_16x16_coin,  		// type
+    IMG_16x16_enemi1,  		// type
 
     b_false,                		// destroyed
 
@@ -138,11 +143,67 @@ characters coin2  = {
     TANK_AI_REG_H3             		// reg_h
 };
 
+characters enemie4  = {
+    280,						// x
+    50,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+
+    TANK_AI_REG_L4,            		// reg_l
+    TANK_AI_REG_H4             		// reg_h
+};
+
+characters coin  = {
+    484,						// x
+    304,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+
+    TANK_AI_REG_L4,            		// reg_l
+    TANK_AI_REG_H4             		// reg_h
+};
+characters coin1  = {
+    484,						// x
+    304,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+
+    TANK_AI_REG_L4,            		// reg_l
+    TANK_AI_REG_H4             		// reg_h
+};
+characters coin2  = {
+    484,						// x
+    304,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+
+    TANK_AI_REG_L4,            		// reg_l
+    TANK_AI_REG_H4             		// reg_h
+};
 characters coin3  = {
     484,						// x
     304,						// y
     DIR_LEFT,              		// dir
-    IMG_16x16_coin,  		// type
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+
+    TANK_AI_REG_L4,            		// reg_l
+    TANK_AI_REG_H4             		// reg_h
+};
+characters enemie  = {
+    484,						// x
+    304,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
 
     b_false,                		// destroyed
 
@@ -198,92 +259,7 @@ static void map_reset( map_entry_t * map )
     }
 }
 
-static bool_t jump(map_entry_t * map, characters * tank, direction_t dir, int upOrDown ){
-	unsigned int    x;
-	unsigned int    y;
 
-	map_entry_t *   tl;
-	map_entry_t *   tc;
-	map_entry_t *   tr;
-	map_entry_t *   cl;
-	map_entry_t *   cc;
-	map_entry_t *   cr;
-	map_entry_t *   bl;
-	map_entry_t *   bc;
-	map_entry_t *   br;
-
-	if( tank->x > (( MAP_X + MAP_W ) * 16 - 16 ) ||
-		tank->y > ( MAP_Y + MAP_H ) * 16 - 16 ) {
-		return b_false;
-	}
-
-	x = tank->x;
-	y = tank->y;
-
-	// Make sure that coordinates will stay within map boundaries after moving.
-	if( dir == DIR_LEFT ) {
-		if( x > MAP_X * 16 / 2){
-
-			if(upOrDown == 1){   //up left
-				x-=10;
-				y-=25;
-			}else{     //down left
-				x-=10;
-				y+=25;
-			}
-
-		}
-	} else if( dir == DIR_RIGHT ) {
-		if( x < ( (MAP_X + MAP_W ) * 16 - 16)/2 +  (( (MAP_X + MAP_W ) * 16 - 16)/2)/5 ){
-
-			if(upOrDown == 1){   //up right
-				x+=10;
-				y-=25;
-			}else{     //down right
-				x+=10;
-				y+=25;
-			}
-		}
-	}
-
-
-	tl = &map[ ( y / 16 ) * MAP_WIDTH + ( x / 16 ) ];
-	tc = &map[ ( y / 16 ) * MAP_WIDTH + ( ( x + 7 ) / 16 ) ];
-	tr = &map[ ( y / 16 ) * MAP_WIDTH + ( ( x + 15 ) / 16 ) ];
-	cl = &map[ ( ( y + 7 ) / 16 ) * MAP_WIDTH + ( x / 16 ) ];
-	cc = &map[ ( ( y + 7 ) / 16 ) * MAP_WIDTH + ( ( x + 7 ) / 16 ) ];
-	cr = &map[ ( ( y + 7 ) / 16 ) * MAP_WIDTH + ( ( x + 15 ) / 16 ) ];
-	bl = &map[ ( ( y + 15 ) / 16 ) * MAP_WIDTH + ( x / 16 ) ];
-	bc = &map[ ( ( y + 15 ) / 16 ) * MAP_WIDTH + ( ( x + 7 ) / 16 ) ];
-	br = &map[ ( ( y + 15 ) / 16 ) * MAP_WIDTH + ( ( x + 15 ) / 16 ) ];
-
-	if( tank->x != x || tank->y != y ) {
-		// Tank can move if water, iron or brick wall isn't ahead.
-		if( tl->ptr != IMG_16x16_plavacigla && tl->ptr != IMG_16x16_cigle && tl->ptr != IMG_16x16_enemi1 &&
-			tc->ptr != IMG_16x16_plavacigla && tc->ptr != IMG_16x16_cigle && tc->ptr != IMG_16x16_enemi1 &&
-			tr->ptr != IMG_16x16_plavacigla && tr->ptr != IMG_16x16_cigle && tr->ptr != IMG_16x16_enemi1 &&
-			cl->ptr != IMG_16x16_plavacigla && cl->ptr != IMG_16x16_cigle && cl->ptr != IMG_16x16_enemi1 &&
-			cc->ptr != IMG_16x16_plavacigla && cc->ptr != IMG_16x16_cigle && cc->ptr != IMG_16x16_enemi1 &&
-			cr->ptr != IMG_16x16_plavacigla && cr->ptr != IMG_16x16_cigle && cr->ptr != IMG_16x16_enemi1 &&
-			bl->ptr != IMG_16x16_plavacigla && bl->ptr != IMG_16x16_cigle && bl->ptr != IMG_16x16_enemi1 &&
-			bc->ptr != IMG_16x16_plavacigla && bc->ptr != IMG_16x16_cigle && bc->ptr != IMG_16x16_enemi1 &&
-			br->ptr != IMG_16x16_plavacigla && br->ptr != IMG_16x16_cigle && br->ptr != IMG_16x16_enemi1  ) {
-
-			tank->x = x;
-			tank->y = y;
-
-			if( tank->dir != dir ) {
-				tank->dir = dir;
-
-				Xil_Out32( XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + tank->reg_l ), (unsigned int)0x8F000000  | tank->type );
-			}
-
-			Xil_Out32( XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + tank->reg_h ), ( tank->y << 16 ) | tank->x );
-
-			return b_true;
-		}
-	}
-}
 static void coin_destroy( characters * coin,unsigned int x, unsigned int y){
 	coin->destroyed = b_true;
 
@@ -291,6 +267,8 @@ static void coin_destroy( characters * coin,unsigned int x, unsigned int y){
 	Xil_Out32( XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 4 * ( REGS_BASE_ADDRESS + coin->reg_h ), ( coin>y << 16 ) | coin->x );
 
 }
+
+
 static bool_t mario_move( map_entry_t * map, characters * tank, direction_t dir)
 {
 		unsigned int    x;
@@ -319,17 +297,11 @@ static bool_t mario_move( map_entry_t * map, characters * tank, direction_t dir)
 
 	    // Make sure that coordinates will stay within map boundaries after moving.
 	    if( dir == DIR_LEFT ) {
-	        if( x > MAP_X * 16 )
+	        if( x >  24  )
 	        	x--;
 	    } else if( dir == DIR_RIGHT ) {
-	        if( x < ( MAP_X + MAP_W ) * 16 - 16 )
+	        if( x <   600 )
 	        	x++;
-	    } else if( dir == DIR_UP ) {
-	        if( y > MAP_Y * 16 )
-	            y--;
-	    } else if( dir == DIR_DOWN ) {
-	        if( y < ( MAP_X + MAP_W ) * 16 - 16)
-	            y++;
 	    }
 
 	    if(tank->x == 454 && tank->y == 304 ){
@@ -416,7 +388,7 @@ static bool_t mario_move( map_entry_t * map, characters * tank, direction_t dir)
 }
 
 static void process_ai( characters * tank, unsigned int * ai_dir )
-{
+{int brojac = 0;
 	unsigned int	tmp_dir;
 	bool_t			turn;
 	unsigned int	i;
@@ -430,7 +402,7 @@ static void process_ai( characters * tank, unsigned int * ai_dir )
 
 			*ai_dir = tmp_dir;
 
-		} while( mario_move( map1, &enemie, *ai_dir) == b_false );
+		} while( mario_( map1, &enemie, *ai_dir) == b_false );
 	} else {
 		while( mario_move( map1, &enemie, *ai_dir ) == b_false ) {
 			while( tmp_dir == *ai_dir ) {
@@ -466,6 +438,54 @@ static void process_ai( characters * tank, unsigned int * ai_dir )
 }
 
 
+void muva_leti(characters * muva){
+
+	if (muva->destroyed == b_false){
+
+		if(brojac1 == 0){
+			muva->type = IMG_16x16_muva_rasirena;
+			chhar_spawn(muva);
+
+			}
+
+		if(brojac1 == 150){
+			muva->type = IMG_16x16_muva_skupljena;
+			chhar_spawn(muva);
+		}
+
+	 if(brojac1 == 300){
+
+
+		brojac1 = -1;
+	 }
+	 brojac1++;
+
+
+
+
+	}
+
+}
+
+void battle_shoot(characters * brod , characters * metak){
+	int x = brod -> x;
+	int type = metak -> type;
+	int y = 450;
+	metak->x = x;
+
+	for(y ; y >0 ; y--){
+		metak->y = y;
+		chhar_spawn(metak);
+
+		if( x > 310 && x < 330){
+			coin_destroy(&enemie2,x,metak->y);
+		}
+	}
+
+
+}
+
+
 
 void battle_city( void )
 {
@@ -477,15 +497,16 @@ void battle_city( void )
 	map_reset( map1 );
 
 
-	chhar_spawn(&coin1);
-	chhar_spawn(&coin2);
-	chhar_spawn(&coin3);
-	chhar_spawn(&enemie);
 	chhar_spawn(&mario);
 
-	while( 1 ) {
+		while( 1 ) {
+			for(i = 0 ; i < 30000; i++){}
 
-    	   buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
+
+			muva_leti(&enemie2);
+			muva_leti(&enemie4);
+			muva_leti(&enemie1);
+    	    buttons = XIo_In32( XPAR_IO_PERIPH_BASEADDR );
 
 			if( BTN_LEFT( buttons ) ) {
 				mario_move( map1, &mario, DIR_LEFT );
@@ -497,28 +518,14 @@ void battle_city( void )
 				tmpUp = 0;
 			} else if( BTN_UP( buttons ) ) {
 
-				if(tmpBtn == 1 ){
-									jump( map1, &mario, DIR_LEFT, 1 ); //up
-									for(i = 0; i < 1000000; i++){}
-									jump( map1, &mario, DIR_LEFT, 0 ); //down
-								}
-				else if(tmpBtn == 0 )
-								{
-									jump( map1, &mario, DIR_RIGHT, 1 );  //up
-									for(i = 0; i < 1000000; i++){}
-									jump( map1, &mario, DIR_RIGHT, 0 );  //down
-									mario_move( map1, &mario, DIR_DOWN );
-									mario_move( map1, &mario, DIR_DOWN );
-									mario_move( map1, &mario, DIR_DOWN );
-								}
-								tmpUp = 1;
+				battle_shoot(&mario,&enemie3);
 			} else if( BTN_DOWN( buttons ) ) {
-				mario_move( map1, &mario, DIR_DOWN );
+
 				tmpUp = 0;
 			}
 
-		process_ai( &enemie, DIR_LEFT );
-		for(i = 0; i < 300000; i++){}
+		//process_ai( &enemie, DIR_LEFT );
+		//for(i = 0; i < 300000; i++){}
 
 
         map_update( map1 );
