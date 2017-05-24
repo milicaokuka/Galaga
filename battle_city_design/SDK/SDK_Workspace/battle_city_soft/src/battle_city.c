@@ -66,8 +66,11 @@ int  prvi1 = 1;
 int	 prvi2 = 1;
 int  prvi3 = 1;
 
+int broj_muva = 3;
 int brojac1 = 0;
+int usporavac_metka = 0 ;
 int i ;
+int y = 450;
 
 
 typedef enum {
@@ -467,23 +470,40 @@ void muva_leti(characters * muva){
 
 }
 
+
+
+
 void battle_shoot(characters * brod , characters * metak){
 	int x = brod -> x;
 	int type = metak -> type;
-	int y = 450;
 	metak->x = x;
 
-	for(y ; y >0 ; y--){
+
 		metak->y = y;
+		y--;
+
+
 		chhar_spawn(metak);
 
-		if( x > 310 && x < 330){
-			coin_destroy(&enemie2,x,metak->y);
+		for(i = 0 ; i < broj_muva; i++){
+
+			if( x >  enemie4.x - 10 && x < enemie4.x + 10 && metak->y == enemie4.y){
+				coin_destroy(&enemie4,x,metak->y);
+
+			}
+			if( x > enemie2.x - 10 && x < enemie2.x + 10  && metak->y == enemie2.y){
+							coin_destroy(&enemie2,x,metak->y);
+
+						}
+			if( x > enemie1.x - 10 && x < enemie1.x + 10  && metak->y == enemie1.y){
+							coin_destroy(&enemie1,x,metak->y);
+
+						}
 		}
 	}
 
 
-}
+
 
 
 
