@@ -6,7 +6,8 @@
 
 // ***** 8x8 IMAGES *****
 
-
+ 0x07BF
+#define IMG_16x16_muva_rasirena_plava		0x077F
 
 // ***** 16x16 IMAGES *****
 

@@ -7,11 +7,11 @@ entity battle_city is
       DATA_WIDTH           : natural := 32;
       COLOR_WIDTH          : natural := 24;
       ADDR_WIDTH           : natural := 14;
-      REGISTER_OFFSET      : natural := 8959;   -- 5438  6960           -- Pointer to registers in memory map
+      REGISTER_OFFSET      : natural := 9087;   -- 5438  6960           -- Pointer to registers in memory map
       C_BASEADDR           : natural := 0;               -- Pointer to local memory in memory map
-      REGISTER_NUMBER      : natural := 10;              -- Number of registers used for sprites
-      NUM_BITS_FOR_REG_NUM : natural := 4;               -- Number of bits required for number of registers
-      MAP_OFFSET           : natural := 4159;     -- 639     Pointer to start of map in memory
+      REGISTER_NUMBER      : natural := 32;              -- Number of registers used for sprites
+      NUM_BITS_FOR_REG_NUM : natural := 5;               -- Number of bits required for number of registers
+      MAP_OFFSET           : natural := 4287;     -- 639     Pointer to start of map in memory
       OVERHEAD             : natural := 5;               -- Number of overhead bits
       SPRITE_Z             : natural := 1                -- Z coordinate of sprite
 	);
@@ -63,16 +63,40 @@ architecture Behavioral of battle_city is
    -- Globals --
    signal registers_s      : registers_t :=                                -- Array representing registers 
    --   row   |    col  |en&size|  rot  | pointer
-   (( x"0130" & x"00e3" & x"8f" & x"00" & x"01FF" ),  --mario
-    ( x"0170" & x"00d5" & x"8f" & x"00" & x"01BF" ),  --enemie
-    ( x"0170" & x"011b" & x"8f" & x"00" & x"01BF" ),
-    ( x"0170" & x"014d" & x"8f" & x"00" & x"01BF" ),
-    ( x"0170" & x"01b1" & x"8f" & x"00" & x"01BF" ), 
-    ( x"0130" & x"01c6" & x"8f" & x"00" & x"013f" ),  --coin
-    ( x"0130" & x"01d5" & x"8f" & x"00" & x"013f" ),
-    ( x"0130" & x"01e4" & x"8f" & x"00" & x"013f" ),
-    ( x"0130" & x"01f3" & x"8f" & x"00" & x"013f" ),
-    ( x"0000" & x"0090" & x"7f" & x"00" & x"03d0" )); --brick
+   (( x"0130" & x"00e3" & x"8f" & x"00" & x"63FF" ),  --mario
+    ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),  --enemie
+    ( x"0170" & x"011b" & x"8f" & x"00" & x"63FF" ),
+    ( x"0170" & x"014d" & x"8f" & x"00" & x"63FF" ),
+    ( x"0170" & x"01b1" & x"8f" & x"00" & x"63FF" ), 
+	 ( x"0170" & x"01b1" & x"8f" & x"00" & x"63FF" ), 
+    ( x"0130" & x"01c6" & x"8f" & x"00" & x"63FF" ),  --coin
+    ( x"0130" & x"01d5" & x"8f" & x"00" & x"63FF" ),
+    ( x"0130" & x"01e4" & x"8f" & x"00" & x"63FF" ),
+    ( x"0130" & x"01f3" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),	
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+     ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+     ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+		  ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+		   ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+		    ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+			 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+			 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+			 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+			
+			   ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+			    ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
+	 
+    ( x"0000" & x"0090" & x"7f" & x"00" & x"63FF" )); --brick
     
 	signal reg_word_addr : signed(ADDR_WIDTH-1 downto 0);
 	signal reg_idx       : signed(ADDR_WIDTH-1 downto 1);
@@ -355,17 +379,40 @@ architecture Behavioral of battle_city is
 
 
 		
-	reg_intersected_s0 <= "1001" when reg_intsect_s0(9) = '1' else
-                        "1000" when reg_intsect_s0(8) = '1' else
-                        "0111" when reg_intsect_s0(7) = '1' else
-                        "0110" when reg_intsect_s0(6) = '1' else
-                        "0101" when reg_intsect_s0(5) = '1' else
-                        "0100" when reg_intsect_s0(4) = '1' else
-                        "0011" when reg_intsect_s0(3) = '1' else
-                        "0010" when reg_intsect_s0(2) = '1' else
-                        "0001" when reg_intsect_s0(1) = '1' else
-                        "0000" when reg_intsect_s0(0) = '1' else
-                        "0000"; 				
+	reg_intersected_s0 <= 				
+										"11111" when reg_intsect_s0(31) = '1' else
+										"11110" when reg_intsect_s0(30) = '1' else
+										"11101" when reg_intsect_s0(29) = '1' else
+										"11100" when reg_intsect_s0(28) = '1' else
+										"11011" when reg_intsect_s0(27) = '1' else
+										"11010" when reg_intsect_s0(26) = '1' else
+										"11001" when reg_intsect_s0(25) = '1' else
+										"11000" when reg_intsect_s0(24) = '1' else
+										"10111" when reg_intsect_s0(23) = '1' else
+										"10110" when reg_intsect_s0(22) = '1' else
+										"10101" when reg_intsect_s0(21) = '1' else
+								"10100" when reg_intsect_s0(20) = '1' else
+								"10011" when reg_intsect_s0(19) = '1' else
+								"10010" when reg_intsect_s0(18) = '1' else
+								"10001" when reg_intsect_s0(17) = '1' else
+								"10000" when reg_intsect_s0(16) = '1' else
+								"01111" when reg_intsect_s0(15) = '1' else
+								"01110" when reg_intsect_s0(14) = '1' else
+								"01101" when reg_intsect_s0(13) = '1' else
+								"01100" when reg_intsect_s0(12) = '1' else
+								"01011" when reg_intsect_s0(11) = '1' else
+								"01010" when reg_intsect_s0(10) = '1' else
+								"01001" when reg_intsect_s0(9) = '1' else
+                        "01000" when reg_intsect_s0(8) = '1' else
+                        "00111" when reg_intsect_s0(7) = '1' else
+                        "00110" when reg_intsect_s0(6) = '1' else
+                        "00101" when reg_intsect_s0(5) = '1' else
+                        "00100" when reg_intsect_s0(4) = '1' else
+                        "00011" when reg_intsect_s0(3) = '1' else
+                        "00010" when reg_intsect_s0(2) = '1' else
+                        "00001" when reg_intsect_s0(1) = '1' else
+                        "00000" when reg_intsect_s0(0) = '1' else
+                        "00000"; 				
 	
 
 	

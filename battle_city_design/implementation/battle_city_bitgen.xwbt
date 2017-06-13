@@ -1,7 +1,7 @@
-INFILE=D:\ra20-2014\Galaga\battle_city_design\implementation\battle_city.ncd
-OUTFILE=D:\ra20-2014\Galaga\battle_city_design\implementation\battle_city.bit
+INFILE=D:\ra223-2014\Galaga\battle_city_design\implementation\battle_city.ncd
+OUTFILE=D:\ra223-2014\Galaga\battle_city_design\implementation\battle_city.bit
 FAMILY=Spartan6
 PART=xc6slx45-2fgg676
-WORKINGDIR=D:\ra20-2014\Galaga\battle_city_design\implementation
+WORKINGDIR=D:\ra223-2014\Galaga\battle_city_design\implementation
 LICENSE=ISE
 USER_INFO=209858334_178080923_210593072_268
