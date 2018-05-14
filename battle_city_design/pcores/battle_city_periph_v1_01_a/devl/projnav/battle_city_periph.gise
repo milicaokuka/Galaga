@@ -107,14 +107,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1495198906" xil_pn:in_ck="3505242367039131751" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="5349504966102051856" xil_pn:start_ts="1495198881">
+    <transform xil_pn:end_ts="1526285819" xil_pn:in_ck="3153255567802740610" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="5349504966102051856" xil_pn:start_ts="1526285789">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="battle_city_standalone.lso"/>
+      <outfile xil_pn:name="battle_city_standalone.ngc"/>
+      <outfile xil_pn:name="battle_city_standalone.ngr"/>
+      <outfile xil_pn:name="battle_city_standalone.prj"/>
+      <outfile xil_pn:name="battle_city_standalone.stx"/>
+      <outfile xil_pn:name="battle_city_standalone.syr"/>
+      <outfile xil_pn:name="battle_city_standalone.xst"/>
+      <outfile xil_pn:name="battle_city_standalone_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
     <transform xil_pn:end_ts="1464017669" xil_pn:in_ck="3700443915824393455" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-7731778907864205891" xil_pn:start_ts="1464017669">
@@ -124,9 +130,8 @@
     <transform xil_pn:end_ts="1465831599" xil_pn:in_ck="7846918934407302897" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8592727776501213118" xil_pn:start_ts="1465831593">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputRemoved"/>

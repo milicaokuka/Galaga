@@ -1,14 +1,14 @@
-D:\ra223-2014\Galaga\battle_city_design\implementation\battle_city.ngc 1497877668
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_io_periph_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_proc_sys_reset_0_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_clock_generator_0_wrapper.ngc 1497877650
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_battle_city_periph_0_wrapper.ngc 1497877647
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_microblaze_0_ilmb_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_microblaze_0_dlmb_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_axi4lite_0_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_microblaze_0_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_microblaze_0_i_bram_ctrl_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_microblaze_0_d_bram_ctrl_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_debug_module_wrapper.ngc 1497877616
-D:/ra223-2014/Galaga/battle_city_design/implementation/battle_city_microblaze_0_bram_block_wrapper.ngc 1497877616
+C:\materija\galaga\Galaga\battle_city_design\implementation\battle_city.ngc 1526286008
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_io_periph_wrapper.ngc 1526285977
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_proc_sys_reset_0_wrapper.ngc 1526285870
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_clock_generator_0_wrapper.ngc 1526285989
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_battle_city_periph_0_wrapper.ngc 1526285970
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_microblaze_0_ilmb_wrapper.ngc 1526285981
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_microblaze_0_dlmb_wrapper.ngc 1526285984
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_axi4lite_0_wrapper.ngc 1526285992
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_microblaze_0_wrapper.ngc 1526285987
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_microblaze_0_i_bram_ctrl_wrapper.ngc 1526285880
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_microblaze_0_d_bram_ctrl_wrapper.ngc 1526285888
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_debug_module_wrapper.ngc 1526285929
+C:/materija/galaga/Galaga/battle_city_design/implementation/battle_city_microblaze_0_bram_block_wrapper.ngc 1526285894
 OK

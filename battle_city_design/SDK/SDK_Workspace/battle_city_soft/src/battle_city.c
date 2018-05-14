@@ -126,10 +126,10 @@
 #define MUVA_3_REG_H7				   41
 
 
-#define MUVA_3_REG_L8				   58
-#define MUVA_3_REG_H8				   59
-#define MUVA_3_REG_L9				   56
-#define MUVA_3_REG_H9				   57
+#define MUVA_3_REG_L8				   56
+#define MUVA_3_REG_H8				   57
+#define MUVA_3_REG_L9				   58
+#define MUVA_3_REG_H9				   59
 
 #define ZIVOT_1_REG_L1				   46
 #define ZIVOT_1_REG_H1				   47
@@ -486,7 +486,7 @@ characters muve3_8 = {
 };
 
 characters muve3_9 = {
-	350,						// x
+	390,						// x
 	100,						// y
     DIR_LEFT,              		// dir
     IMG_16x16_muva3_rasirena,   // type
@@ -962,6 +962,7 @@ void fill_muve(void) {
 
 	muve[0] = muve1_1;
 	muve[1] = muve1_2;
+
 	muve[2] = muve1_3;
 	muve[3] = muve1_4;
 	muve[4] = muve1_5;

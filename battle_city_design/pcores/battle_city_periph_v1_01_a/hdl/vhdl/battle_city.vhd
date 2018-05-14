@@ -9,7 +9,6 @@ entity battle_city is
       ADDR_WIDTH           : natural := 14;
       REGISTER_OFFSET      : natural := 9087;   -- 5438  6960           -- Pointer to registers in memory map
       C_BASEADDR           : natural := 0;               -- Pointer to local memory in memory map
-      REGISTER_NUMBER      : natural := 32;              -- Number of registers used for sprites
       NUM_BITS_FOR_REG_NUM : natural := 5;               -- Number of bits required for number of registers
       MAP_OFFSET           : natural := 4287;     -- 639     Pointer to start of map in memory
       OVERHEAD             : natural := 5;               -- Number of overhead bits
@@ -33,6 +32,7 @@ entity battle_city is
 end entity battle_city;
 
 architecture Behavioral of battle_city is
+   constant REGISTER_NUMBER      : natural := 2**NUM_BITS_FOR_REG_NUM;              -- Number of registers used for sprites
 
    component ram 	
    port
@@ -62,44 +62,13 @@ architecture Behavioral of battle_city is
 	
    -- Globals --
    signal registers_s      : registers_t :=                                -- Array representing registers 
-   --   row   |    col  |en&size|  rot  | pointer
-   (( x"0130" & x"00e3" & x"8f" & x"00" & x"63FF" ),  --mario
-    ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),  --enemie
-    ( x"0170" & x"011b" & x"8f" & x"00" & x"63FF" ),
-    ( x"0170" & x"014d" & x"8f" & x"00" & x"63FF" ),
-    ( x"0170" & x"01b1" & x"8f" & x"00" & x"63FF" ), 
-	 ( x"0170" & x"01b1" & x"8f" & x"00" & x"63FF" ), 
-    ( x"0130" & x"01c6" & x"8f" & x"00" & x"63FF" ),  --coin
-    ( x"0130" & x"01d5" & x"8f" & x"00" & x"63FF" ),
-    ( x"0130" & x"01e4" & x"8f" & x"00" & x"63FF" ),
-    ( x"0130" & x"01f3" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),	
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-     ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-     ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-		  ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-		   ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-		    ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-			 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-			 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-			 ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-			
-			   ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-			    ( x"0170" & x"00d5" & x"8f" & x"00" & x"63FF" ),
-	 
-    ( x"0000" & x"0090" & x"7f" & x"00" & x"63FF" )); --brick
+   --               row   |    col  |en&size|  rot  | pointer
+   (
+		others => ( x"0000" & x"0000" & x"00" & x"00" & x"0000" )
+	);
     
-	signal reg_word_addr : signed(ADDR_WIDTH-1 downto 0);
-	signal reg_idx       : signed(ADDR_WIDTH-1 downto 1);
+	signal reg_word_addr : unsigned(ADDR_WIDTH-1 downto 0);
+	signal reg_idx       : unsigned(ADDR_WIDTH-1 downto 1);
 	 
    signal thrd_stg_addr_s  : unsigned(ADDR_WIDTH-1 downto 0);              -- Addresses needed in third stage
    signal scnd_stg_addr_s  : unsigned(ADDR_WIDTH-1 downto 0);              -- Addresses needed in second stage
@@ -121,7 +90,7 @@ architecture Behavioral of battle_city is
    signal mem_address_s    : std_logic_vector(ADDR_WIDTH-1 downto 0);      -- Address used to read from memory
 	
    -- Zero stage --
-   signal local_addr_s     : signed(ADDR_WIDTH-1 downto 0);	
+   signal local_addr_s     : unsigned(ADDR_WIDTH-1 downto 0);	
    signal reg_size_s       : size_t;
    signal reg_en_s         : std_logic_vector(REGISTER_NUMBER-1 downto 0);
    signal reg_pointer_s    : pointer_t;
@@ -328,8 +297,8 @@ architecture Behavioral of battle_city is
    --                            GLOBAL                                             --
    -----------------------------------------------------------------------------------
 
-	local_addr_s <= signed(bus_addr_i) - C_BASEADDR;     
-	reg_word_addr <= signed(local_addr_s) - REGISTER_OFFSET;
+	local_addr_s <= unsigned(bus_addr_i) - C_BASEADDR;     
+	reg_word_addr <= unsigned(local_addr_s) - REGISTER_OFFSET;
 	reg_idx <= reg_word_addr(ADDR_WIDTH-1 downto 1);
 	   process(clk_i) begin
 		  if rising_edge(clk_i) then
@@ -379,42 +348,17 @@ architecture Behavioral of battle_city is
 
 
 		
-	reg_intersected_s0 <= 				
-										"11111" when reg_intsect_s0(31) = '1' else
-										"11110" when reg_intsect_s0(30) = '1' else
-										"11101" when reg_intsect_s0(29) = '1' else
-										"11100" when reg_intsect_s0(28) = '1' else
-										"11011" when reg_intsect_s0(27) = '1' else
-										"11010" when reg_intsect_s0(26) = '1' else
-										"11001" when reg_intsect_s0(25) = '1' else
-										"11000" when reg_intsect_s0(24) = '1' else
-										"10111" when reg_intsect_s0(23) = '1' else
-										"10110" when reg_intsect_s0(22) = '1' else
-										"10101" when reg_intsect_s0(21) = '1' else
-								"10100" when reg_intsect_s0(20) = '1' else
-								"10011" when reg_intsect_s0(19) = '1' else
-								"10010" when reg_intsect_s0(18) = '1' else
-								"10001" when reg_intsect_s0(17) = '1' else
-								"10000" when reg_intsect_s0(16) = '1' else
-								"01111" when reg_intsect_s0(15) = '1' else
-								"01110" when reg_intsect_s0(14) = '1' else
-								"01101" when reg_intsect_s0(13) = '1' else
-								"01100" when reg_intsect_s0(12) = '1' else
-								"01011" when reg_intsect_s0(11) = '1' else
-								"01010" when reg_intsect_s0(10) = '1' else
-								"01001" when reg_intsect_s0(9) = '1' else
-                        "01000" when reg_intsect_s0(8) = '1' else
-                        "00111" when reg_intsect_s0(7) = '1' else
-                        "00110" when reg_intsect_s0(6) = '1' else
-                        "00101" when reg_intsect_s0(5) = '1' else
-                        "00100" when reg_intsect_s0(4) = '1' else
-                        "00011" when reg_intsect_s0(3) = '1' else
-                        "00010" when reg_intsect_s0(2) = '1' else
-                        "00001" when reg_intsect_s0(1) = '1' else
-                        "00000" when reg_intsect_s0(0) = '1' else
-                        "00000"; 				
-	
-
+	process(reg_intsect_s0)
+	begin
+		reg_intersected_s0 <= to_unsigned(0, NUM_BITS_FOR_REG_NUM);
+		for i in REGISTER_NUMBER-1 downto 0 loop
+			if reg_intsect_s0(i) = '1' then
+				reg_intersected_s0 <= to_unsigned(i, NUM_BITS_FOR_REG_NUM);
+				exit;
+			end if;
+		end loop;
+	end process;
+		
 	
 	
 	
