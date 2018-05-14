@@ -103,6 +103,12 @@
 #define MUVA_2_REG_L5				   26
 #define MUVA_2_REG_H5				   27
 
+
+#define MUVA_2_REG_L6				   52
+#define MUVA_2_REG_H6				   53
+#define MUVA_2_REG_L7				   54
+#define MUVA_2_REG_H7				   55
+
 //treci red muva reg
 #define MUVA_3_REG_L				   28
 #define MUVA_3_REG_H				   29
@@ -119,6 +125,12 @@
 #define MUVA_3_REG_L7				   40
 #define MUVA_3_REG_H7				   41
 
+
+#define MUVA_3_REG_L8				   58
+#define MUVA_3_REG_H8				   59
+#define MUVA_3_REG_L9				   56
+#define MUVA_3_REG_H9				   57
+
 #define ZIVOT_1_REG_L1				   46
 #define ZIVOT_1_REG_H1				   47
 #define ZIVOT_2_REG_L2				   48
@@ -130,11 +142,13 @@
 
 
 
+//3
+//5
+//7
 
-
-#define BROJ_MUVA  					   3
-#define BROJ_MUVA2					   5
-#define BROJ_MUVA3					   7
+#define BROJ_MUVA  					   5
+#define BROJ_MUVA2					   7
+#define BROJ_MUVA3					   9
 
 #define BROJ_ZIVOTA 				   3
 
@@ -208,7 +222,6 @@ characters mario = {
 
 
 
-//prvi red muva, 3 sugave koje moras 2 puta da pogodis
 
 characters muve1_1 = {
 	270,						// x
@@ -249,6 +262,31 @@ characters muve1_3  = {
     MUVA_1_REG_H3             		// reg_h
 };
 
+characters muve1_4  = {
+	330,						// x
+    50,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+    b_false,
+
+    MUVA_1_REG_L4,            		// reg_l
+    MUVA_1_REG_H4             		// reg_h
+};
+
+characters muve1_5  = {
+	350,						// x
+    50,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_enemi1,  		// type
+
+    b_false,                		// destroyed
+    b_false,
+
+    MUVA_1_REG_L5,            		// reg_l
+    MUVA_1_REG_H5             		// reg_h
+};
 
 
 //drugi red za crvene muve
@@ -315,6 +353,34 @@ characters muve2_5 = {
     MUVA_2_REG_L5,            		// reg_l
     MUVA_2_REG_H5           		// reg_h
 };
+
+
+characters muve2_6 = {
+	350,						// x
+	75,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_muva2_rasirena,   // type
+
+    b_false,                		// destroyed
+    b_false,
+
+    MUVA_2_REG_L6,            		// reg_l
+    MUVA_2_REG_H6           		// reg_h
+};
+
+characters muve2_7 = {
+	370,						// x
+	75,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_muva2_rasirena,   // type
+
+    b_false,                		// destroyed
+    b_false,
+
+    MUVA_2_REG_L7,            		// reg_l
+    MUVA_2_REG_H7           		// reg_h
+};
+
 
 //treci red za zunzare
 
@@ -406,6 +472,31 @@ characters muve3_7 = {
     MUVA_3_REG_H7           		// reg_h
 };
 
+characters muve3_8 = {
+	370,						// x
+	100,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_muva3_rasirena,   // type
+
+    b_false,                		// destroyed
+    b_false,
+
+    MUVA_3_REG_L8,            		// reg_l
+    MUVA_3_REG_H8           		// reg_h
+};
+
+characters muve3_9 = {
+	350,						// x
+	100,						// y
+    DIR_LEFT,              		// dir
+    IMG_16x16_muva3_rasirena,   // type
+
+    b_false,                		// destroyed
+    b_false,
+
+    MUVA_3_REG_L9,            		// reg_l
+    MUVA_3_REG_H9           		// reg_h
+};
 
 
 
@@ -872,6 +963,9 @@ void fill_muve(void) {
 	muve[0] = muve1_1;
 	muve[1] = muve1_2;
 	muve[2] = muve1_3;
+	muve[3] = muve1_4;
+	muve[4] = muve1_5;
+
 
 }
 
@@ -882,6 +976,9 @@ void fill_muve2(void){
     muve_2[2] = muve2_3;
     muve_2[3] = muve2_4;
     muve_2[4] = muve2_5;
+    muve_2[5] = muve2_6;
+    muve_2[6] = muve2_7;
+
 }
 void fill_muve3(void){
 	muve_3[0] = muve3_1;
@@ -891,6 +988,8 @@ void fill_muve3(void){
 	muve_3[4] = muve3_5;
 	muve_3[5] = muve3_6;
 	muve_3[6] = muve3_7;
+	muve_3[7] = muve3_8;
+	muve_3[8] = muve3_9;
 }
 
 
