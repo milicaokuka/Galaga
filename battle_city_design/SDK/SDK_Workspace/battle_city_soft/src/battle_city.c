@@ -170,7 +170,7 @@ int	 prvi2 = 1;
 int  prvi3 = 1;
 int brojac_polozaja = 0;
 int brojac_polozaja_y = 0;
-
+int brojac_polozaja_z = 0;
 
 int broj_muva = BROJ_MUVA;
 int broj_muva_2 = BROJ_MUVA2;
@@ -190,6 +190,10 @@ int muva_puca = 0;
 int puca_brojac = 0;
 
 int polozaj = 1;
+int polozaj1 = 1;
+int polozaj2 = -2;
+int polozaj_y = 2;
+int polozaj_y1 = 2;
 
 
 
@@ -814,15 +818,30 @@ void promeni_polozaj(characters muva[], int broj){
 
 void promeni_polozaj_y(characters muva[], int broj){
 
-	if(brojac_polozaja > 100){
+	if(brojac_polozaja_y > 100){
 	for (i=0;i<broj;i++){
-		muva[i].x = muva[i].x - polozaj;
+		muva[i].x = muva[i].x - polozaj1;
+		muva[i].y = muva[i].y + polozaj_y1;
 		//muva[i].y = muva[i].y + polozaj;
 	}
 	}
-	brojac_polozaja++;
+	brojac_polozaja_y++;
 }
 
+
+
+void promeni_polozaj_z(characters muva[], int broj){
+
+	if(brojac_polozaja_z > 100){
+	for (i=0;i<broj;i++){
+		muva[i].x = muva[i].x + polozaj2;
+		muva[i].y = muva[i].y + polozaj_y;
+	}
+	}
+	brojac_polozaja_z++;
+}
+
+//za gornja tri reda muva
 void muva_leti(characters  muva[], int broj, int vrsta){
 
 
@@ -897,21 +916,32 @@ void muva_leti(characters  muva[], int broj, int vrsta){
 
 }
 
-void muva_letiDESNO(characters  muva[], int broj, int vrsta){
 
+//za lijeve muve
 
+void muva_leti2R(characters  muva[] ,int broj, int vrsta){
 
 	for(i = 0 ; i < broj ; i++){
 		if (muva[i].destroyed == b_false){
 
 
-			if(brojac_polozaja > 100){
-				if(muva[i].x < 35){
-					polozaj = 1;
+			if(brojac_polozaja_y > 100){
+				if(muva[i].y >400){
+
+					polozaj_y1 =-2;
+						}
+				if(muva[i].y <200){
+
+					polozaj_y1 =2;
+				}
+
+
+				if(muva[i].x < 24){
+					polozaj1 = -1;
 
 				}
 				else if(muva[i].x >  600){
-					polozaj = 1;
+					polozaj1 = 1;
 
 				}
 			}
@@ -967,23 +997,37 @@ void muva_letiDESNO(characters  muva[], int broj, int vrsta){
 	 chhar_spawn(&muva[i]);
 	}
 	}
+
 
 
 }
 
-
-void muva_leti2R(characters  muva[],characters muvaBIG[] ,int broj, int vrsta){
-
-int polozajR = 0;
+//za desne muve
+void muva_leti3R(characters  muva[] ,int broj, int vrsta){
 
 	for(i = 0 ; i < broj ; i++){
 		if (muva[i].destroyed == b_false){
 
-			muva[i].x+=1;
-			muva[i].y-=2;
-			if(muva[i].x == muvaBIG[1].x-20){
 
-				muvaBIG[0]=muva[i];
+			if(brojac_polozaja_y > 100){
+				if(muva[i].y >400){
+
+					polozaj_y =-2;
+				}
+				if(muva[i].y <200){
+
+					polozaj_y =2;
+				}
+
+				if(muva[i].x < 24){
+
+					polozaj2 = 2;
+
+				}
+				else if(muva[i].x >  600){
+					polozaj2 = -2;
+
+				}
 			}
 
 
@@ -1035,9 +1079,9 @@ int polozajR = 0;
 
 
 	 chhar_spawn(&muva[i]);
-	 chhar_spawn(&muvaBIG[i]);
 	}
 	}
+
 
 
 }
@@ -1063,8 +1107,12 @@ void muva_shoot(characters  *muva, characters * metak_muva, characters * brod, i
 
 	metak_muva->y = *y;	 // metak uzima kordinate od globalne promenjive
 
+//		*y = *y+2;
+	if(muva->y <120 ){
 		*y = *y+2;
-
+	}else{
+		*y = *y+1;
+	}
 
 	if(muva->destroyed == b_false)
 		chhar_spawn(metak_muva);
@@ -1073,9 +1121,14 @@ void muva_shoot(characters  *muva, characters * metak_muva, characters * brod, i
 	{
 		if(metak_muva->destroyed == b_false){
 			//chhar_spawn(metak_muva);
+			destroy(metak_muva,metak_muva->x,metak_muva->y);
 			if (*y >= 450){
 					destroy(metak_muva,metak_muva->x,metak_muva->y);
 				}
+		}else{
+
+			destroy(metak_muva,metak_muva->x,metak_muva->y);
+
 		}
 
 	}
@@ -1199,8 +1252,6 @@ void fill_muve2(void){
     muve_2[2] = muve2_3;
     muve_2[3] = muve2_4;
     muve_2[4] = muve2_5;
-   // muve_2[5] = muve2_6;
-    //muve_2[6] = muve2_7;
 
 }
 void fill_muve3(void){
@@ -1222,6 +1273,7 @@ void fill_muve4(void) {
 	muve_4[2] = muve3_8;
 
 }
+
 void fill_muve5(void) {
 
 	muve_5[0] = muve1_5;
@@ -1231,47 +1283,11 @@ void fill_muve5(void) {
 }
 
 
-/*void set_cursor(Xuint32 new_value){
-	cursor_position = new_value;
-}
-
-void clear_text_screen(Xuint32 BaseAddress){
-	int i;
-	for (i = 0; i < 4800; i++){
-		VGA_PERIPH_MEM_mWriteMemory(BaseAddress + TEXT_MEM_OFF + i*4, 0x20);
-	}
-}
-
-void print_string(Xuint32 BaseAddress, unsigned char string_s[], int lenght){
-	int i;
-	for (i = 0; i < lenght; i++){
-		VGA_PERIPH_MEM_mWriteMemory(BaseAddress + TEXT_MEM_OFF + cursor_position + i*4, (string_s[i]-0x40));
-	}
-}
-
-void clear_graphics_screen(Xuint32 BaseAddress){
-	int i;
-	for (i = 0; i < 9600; i++){
-	    VGA_PERIPH_MEM_mWriteMemory(BaseAddress + GRAPHICS_MEM_OFF + i*4, 0x0);
-	}
-}
-
-*/
 
 void battle_city( void )
 {
 
 
-
-	//	XStatus VGA_PERIPH_MEM_SelfTest(void * baseaddr_p);
-		unsigned char string_s[] = "***GAME OVER***\n";
-
-
-
-
-
-
-	//VGA_PERIPH_MEM_mWriteMemory(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x04, 0x3);// display_mode  1
 
 	unsigned int buttons, tmpBtn = 0, tmpUp = 0;
 	int i,change = 0;
@@ -1282,12 +1298,7 @@ void battle_city( void )
 	fill_muve4();
 	fill_muve5();
 
-	/*chhar_spawn(&muve3_9);
-	chhar_spawn(&muve3_8);
-	chhar_spawn(&muve2_6);
-	chhar_spawn(&muve2_7);
-	chhar_spawn(&muve1_4);
-	chhar_spawn(&muve1_5);*/
+
 
 	chhar_spawn(&mario);
 
@@ -1304,9 +1315,8 @@ void battle_city( void )
 			muva_leti(muve,broj_muva,1);
 			muva_leti(muve_2,broj_muva_2,2);
 			muva_leti(muve_3,broj_muva_3,3);
-			//muva_leti2R(muve_4,muve,3,3);
-			muva_leti(muve_4,3,3);
-			muva_leti(muve_5,3,3);
+			muva_leti2R(muve_4,3,2);
+			muva_leti3R(muve_5,3,3);
 
 
 
@@ -1348,10 +1358,7 @@ void battle_city( void )
 			if (muve_3[r3].destroyed == b_false){
 					temp3 = r3;
 			}
-			else {
-				//for(i = 0 ; i < broj_muva_3 ; i++)
-					//if(muve)
-			}
+
 			int r4 = rand() % 3;
 				if (muve_4[r4].destroyed == b_false){
 						temp4 = r4;
@@ -1365,21 +1372,45 @@ void battle_city( void )
 			muva_shoot(&muve_2[temp2],&metak_muva_2,&mario,&y_muva_2);
 			muva_shoot(&muve_3[temp3],&metak_muva_3,&mario,&y_muva_3);
 			muva_shoot(&muve_4[temp4],&metak_muva_4,&mario,&y_muva_4);
-			muva_shoot(&muve_5[temp5],&metak_muva_3,&mario,&y_muva_5);
+			muva_shoot(&muve_5[temp5],&metak_muva_5,&mario,&y_muva_5);
 
 
 			if(brojac_polozaja > 100){
 				promeni_polozaj(muve, broj_muva);
 				promeni_polozaj(muve_2, broj_muva_2);
 				promeni_polozaj(muve_3, broj_muva_3);
-				promeni_polozaj_y(muve_4, 3);
-				promeni_polozaj(muve_5, 3);
+
 			}
 
 			if(brojac_polozaja > 101) {
 				brojac_polozaja = 0;
 			}
 			brojac_polozaja+=10;
+
+
+			if(brojac_polozaja_y > 100){
+
+							promeni_polozaj_y(muve_4, 3);
+
+						}
+
+						if(brojac_polozaja_y > 101) {
+							brojac_polozaja_y = 0;
+						}
+						brojac_polozaja_y+=10;
+
+
+			if(brojac_polozaja_z > 100){
+
+
+						promeni_polozaj_z(muve_5, 3);
+								}
+
+				if(brojac_polozaja_z > 101) {
+						brojac_polozaja_z = 0;
+							}
+					brojac_polozaja_z+=10;
+
 
 
 			chhar_spawn(&zivot_1);
@@ -1392,13 +1423,13 @@ void battle_city( void )
 			case 2:
 			{
 				zivot_2.type =IMG_16x16_crno;
-
+				chhar_spawn(&mario);
 				break;
 			}
 			case 1:
 			{
 				zivot_1.type =IMG_16x16_crno;
-
+				chhar_spawn(&mario);
 				break;
 			}
 
@@ -1409,21 +1440,6 @@ void battle_city( void )
         map_update( map1 );
 
     }
-		if(broj_zivota==0){
-
-			// VGA_PERIPH_MEM_mWriteMemory(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 0x00, 0x0);// direct mode   0
-				  //  VGA_PERIPH_MEM_mWriteMemory(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 0x04, 0x3);// display_mode  1
-				   //VGA_PERIPH_MEM_mWriteMemory(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 0x08, 0x1);// show frame      2
-				  // VGA_PERIPH_MEM_mWriteMemory(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 0x0C, 0x1);// font size       3
-
-
-		 	//clear_text_screen(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR);
-		    //clear_graphics_screen(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR);
-		   // set_cursor(350);
-		    //print_string(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR, string_s, 6);
-		}
-		//if(broj_zivota==0)
-		//print_string(XPAR_BATTLE_CITY_PERIPH_0_BASEADDR + 0x04,"IZGUBILI STE,NEMATE POJMA",25);
 }
 
 
