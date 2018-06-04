@@ -702,6 +702,7 @@ static void map_reset( map_entry_t * map )
 
 
 static void destroy( characters * coin,unsigned int x, unsigned int ya){
+	int m;
 	if (coin->type == IMG_16x16_muva_skupljena || coin->type == IMG_16x16_muva_rasirena ){
 		coin->first_shoot = b_true;
 	}
@@ -710,6 +711,7 @@ static void destroy( characters * coin,unsigned int x, unsigned int ya){
 	{
 		if (coin->type == IMG_16x16_mario){
 			broj_zivota = broj_zivota - 1;
+
 		}
 
 		coin->destroyed = b_true;
@@ -1204,7 +1206,7 @@ void battle_shoot(characters * brod , characters * metak){
 		if(metak->destroyed == b_false){
 					for(i = 0 ; i < 3 ; i++){
 						if(muve_4[i].destroyed == b_false){
-							if( metak->x >  muve_4[i].x - 10 && metak->x < muve_4[i].x + 10 && metak->y == muve_4[i].y){
+							if( metak->x >  muve_4[i].x - 10 && metak->x < muve_4[i].x + 10   && metak->y > muve_4[i].y -10 && metak->y < muve_4[i].y + 10 ){
 								destroy(&muve_4[i],x,metak->y);
 									destroy(metak,x,metak->y);
 
@@ -1217,7 +1219,7 @@ void battle_shoot(characters * brod , characters * metak){
 		if(metak->destroyed == b_false){
 							for(i = 0 ; i < 3 ; i++){
 								if(muve_5[i].destroyed == b_false){
-									if( metak->x >  muve_5[i].x - 10 && metak->x < muve_5[i].x + 10 && metak->y == muve_5[i].y){
+									if( metak->x >  muve_5[i].x - 10 && metak->x < muve_5[i].x + 10 && metak->y > muve_5[i].y -10 && metak->y < muve_5[i].y + 10 ){
 										destroy(&muve_5[i],x,metak->y);
 											destroy(metak,x,metak->y);
 
